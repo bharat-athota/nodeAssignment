@@ -1,0 +1,23 @@
+const mongoose = require('mongoose');
+
+const tagsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  createdOn: {
+    type: String,
+    required: true
+  },
+  tags: {
+    type: Array<string>,
+    required: false
+  }
+});
+
+module.exports = mongoose.model('Tags', tagsSchema);
